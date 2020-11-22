@@ -25,7 +25,7 @@ void Time::Reset(int h, int m)
 	hours = h;
 	minutes = m;
 }
-Time Time::Sum(const Time& t) const
+Time Time::operator+(const Time& t) const
 {
 	Time sum;
 	sum.minutes = minutes + t.minutes;
