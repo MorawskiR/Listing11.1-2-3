@@ -8,36 +8,39 @@ int main()
 	using std::cout;
 	using std::endl;
 
-	Time planning;
-	Time coding(2, 40);
-	Time fixing(5, 55);
+	Time weding(4, 35);
+	Time waxing(2, 47);
 	Time total;
+	Time diff;
+	Time adjusted;
 
-	cout << "czas planowania = ";
-	planning.Show();
+	cout << "czas pielenia : ";
+	weding.Show();
 	cout << endl;
 
-	cout << "czas kodowania = ";
-	coding.Show();
+
+	cout << "czas woskowania : ";
+	waxing.Show();
 	cout << endl;
 
-	cout << "czas poprawiania = ";
-	fixing.Show();
+
+
+	cout << "laczny czas pracy: ";
+	total = weding + waxing;
+	total.Show();
 	cout << endl;
 
-	total = coding + fixing ;
+
+	diff = weding - waxing;
+	cout << "czas pileneie - cczas woskowania = ";
+	diff.Show();
+	cout << endl;
+
+	adjusted = total * 1.5;
+	cout << "czas pracy z poprawką na przerwy = ";
+	adjusted.Show();
+	cout << endl;
 	
-	cout << "łącznie (coding.Show(fixing) = ";
-	total.Show();
-	cout << endl;
-	cout << "Kojene poprawki: ";
-	Time morefixing(3, 28);
-	morefixing.Show();
-	cout << endl;
-	cout << "lacznie more fixing .operator+(total )):";
-	total = morefixing.operator+(total);
-
-	total.Show();
 
 	return 0;
 }
