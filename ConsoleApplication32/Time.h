@@ -1,4 +1,8 @@
 #pragma once
+#include <ostream>
+#include <ostream>
+using namespace std;
+
 #ifndef TIME_H_
 #define TIME_H_
 
@@ -17,6 +21,8 @@ public:
 	Time operator+(const Time& t) const;
 	Time operator-(const Time& t) const;
 	Time operator*(double n) const;
+	friend Time operator*(double m, const Time& t) { return t * m; }
+	friend ostream& operator<<(ostream& os, const Time& t);
 	void Show() const;
 };
 

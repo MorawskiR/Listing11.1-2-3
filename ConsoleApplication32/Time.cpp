@@ -51,7 +51,20 @@ Time Time::operator*(double mult) const
 	result.minutes = totalminutes % 60;
 	return result;
 }
+
+
 void Time::Show() const
 {
 	std::cout << hours << " godzin, " << minutes << " minut.";
+}
+
+/* void operator<<(ostream& os, const Time& t)
+{
+	os << t.hours << " godzin, " << t.minutes << "minut";
+} */
+
+ostream& operator<<(ostream& os, const Time& t)
+{
+	os << t.hours << " godzin, " << t.minutes << " minut" << "bo inaczej dupa zbita " << endl;
+	return os;
 }
